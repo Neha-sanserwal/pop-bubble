@@ -13,4 +13,18 @@
 
   </div>
 </body>
+<script>
+  const gameBoard = document.getElementsByClassName('bubbleBox')[0]
+  for (i=0;i<10;i++){ 
+    const bubble = document.createElement('div');
+    bubble.className = 'bubble';
+    posX =650;
+    posY =650;
+    bubble.style.height= Math.random()*100+'px';
+    bubble.style.width = bubble.style.height;
+    bubble.style.left = Math.random()*1000+'px';
+    bubble.setAttribute('id',i);
+    gameBoard.append(bubble)
+  }
+</script>
 </html>
