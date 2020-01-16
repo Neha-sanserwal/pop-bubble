@@ -12,7 +12,7 @@ const addBubbles = function(gameBoard){
     bubble.className = 'bubble';
     bubble.style.height= 50+Math.random()*10+'px';
     bubble.style.width = bubble.style.height;
-    bubble.style.left = 250+(Math.random()*1000)%800+'px';
+    bubble.style.left = (Math.random()*800)%800+'px';
     bubble.style.top = 200+ (Math.random()*500)%350 +'px';
     bubble.setAttribute('id',i);
     bubble.addEventListener('mouseover',handlePop);

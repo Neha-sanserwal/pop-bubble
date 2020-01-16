@@ -4,7 +4,8 @@
   height: 500px;
   margin-top: 4rem;
   overflow: hidden;
-  width: 1000px;
+  position: relative;
+  width: 900px;
 
 }
 
@@ -13,4 +14,14 @@
   border: 1px solid;
   border-radius: 50%;
   position: absolute;
+  animation: randomlyMove 30s linear 0s infinite;
+}
+@keyframes randomlyMove {
+  from{
+    transform:translate(0px ,500px);
+  }
+  to{
+    transform:translate(0px ,-2000px);
+  }
+
 }
