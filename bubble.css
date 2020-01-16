@@ -1,13 +1,56 @@
+
 .bubbleBox{
   border: 1px solid;
   height: 500px;
+  position: relative;
   margin-top: 4rem;
-  width: 700px;
+  overflow: hidden;
+  width: 1000px;
+
 }
 
 .bubble {
+  margin: 5px;
   border: 1px solid;
-  height: 50px;
   border-radius: 50%;
-  width: 50px;
+  position: relative;
+  top:400px;
+  animation: move 10s linear infinite;
+}
+@keyframes move{  
+  0%{
+      display: block;
+      top: 400px;
+  } 
+  10%{
+    top: 200px;
+  }
+  20%{
+    top:0px;
+  }
+  30%{
+    top:-200px
+  }
+  40%{
+    top:-400px;
+  }
+  50%{
+    top:-600px;
+  }
+  60%{
+    top:-800px;
+  }
+  70%{
+    top:-1000px;
+  }
+  80%{
+    top:-1200px;
+  }
+  90%{
+    top: -1500px;
+  }
+  100%{
+    top:-2000px;
+  }
+
 }
