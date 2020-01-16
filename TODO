@@ -1,6 +1,7 @@
 --DONE-- *create a bubble box.
 --Done-- * place static bubbles inside the box.
 --Done-- * make bubble animation randomly from one position to another.
-* bubble should pop on click.
+--Done-- * bubble should pop on click/hover.
+        Bug: bubbles moving fast
 * place a score board. Score should increase when the bubble is popped.
 * create a poisonous bubble if popped game should be over.
