@@ -6,13 +6,15 @@
   overflow: hidden;
   position: relative;
   width: 900px;
-
+  background: rgb(0, 0, 0);
+ 
 }
 
 .bubble {
   margin: 5px;
-  border: 1px solid;
+  background: radial-gradient(rgb(223, 223, 10), rgb(225,33,45));
   border-radius: 50%;
+  border: rgb(223, 223, 10);
   position: absolute;
   animation: randomlyMove 30s linear 0s infinite;
 }

@@ -1,8 +1,10 @@
+let SCORE = 0;
 const handlePop= function(event){
-  const id = event.target.id;
   const parent = document.getElementsByClassName('bubbleBox')[0];
-  const bubblePop = document.getElementById('pop');
-  bubblePop.play();
+  const audio = new Audio('./Pop-sound-effect/Pop-sound-effect.mp3');
+  audio.play;
+  SCORE = SCORE+1;
+  document.getElementById('scoreCount').innerText = SCORE;
   parent.removeChild(event.target);
 }
 
@@ -14,7 +16,6 @@ const addBubbles = function(gameBoard){
     bubble.style.width = bubble.style.height;
     bubble.style.left = (Math.random()*800)%800+'px';
     bubble.style.top = 200+ (Math.random()*500)%350 +'px';
-    bubble.setAttribute('id',i);
     bubble.addEventListener('mouseover',handlePop);
     gameBoard.append(bubble);
   }
