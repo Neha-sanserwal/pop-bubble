@@ -1,4 +1,12 @@
-let SCORE = 0;
+class Score{
+  constructor(initScore){
+    this.totalScore = initScore;
+  }
+  updateBy(count){
+    this.totalScore = this.totalScore + count;
+  }
+}
+
 const handlePop= function(event){
   const parent = document.getElementsByClassName('bubbleBox')[0];
   const audio = new Audio('./Pop-sound-effect/Pop-sound-effect.mp3');
@@ -16,7 +24,7 @@ const initBubble = function(){
   const bubble = document.createElement('div');
   bubble.className = 'bubble';
   addDimensions(bubble);
-  bubble.addEventListener('mouseover',handlePop);
+  bubble.addEventListener('mouseover',handlePop.bind(null, gameBoard));
   return bubble;
 }
 const addBubbles = function(gameBoard){
