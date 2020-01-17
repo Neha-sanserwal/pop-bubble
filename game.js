@@ -1,27 +1,40 @@
-const handlePop= function(event){
-  const id = event.target.id;
-  const element = document.getElementById(id);
-  const parent = document.getElementsByClassName('bubbleBox')[0];
-  parent.removeChild(element);
+class Score{
+  constructor(initScore){
+    this.totalScore = initScore;
+  }
+  updateBy(count){
+    this.totalScore = this.totalScore + count;
+  }
 }
 
+const handlePop= function(event){
+  const parent = document.getElementsByClassName('bubbleBox')[0];
+  const audio = new Audio('./Pop-sound-effect/Pop-sound-effect.mp3');
+  audio.play;
+  document.getElementById('scoreCount').innerText = SCORE;
+  parent.removeChild(event.target);
+}
+const addDimensions = function(bubble){
+  bubble.style.height= 50+Math.random()*10+'px';
+  bubble.style.width = bubble.style.height;
+  bubble.style.left = (Math.random()*800)%800+'px';
+  bubble.style.top = 200+ (Math.random()*500)%350 +'px';
+}
+const initBubble = function(){
+  const bubble = document.createElement('div');
+  bubble.className = 'bubble';
+  addDimensions(bubble);
+  bubble.addEventListener('mouseover',handlePop.bind(null, gameBoard));
+  return bubble;
+}
 const addBubbles = function(gameBoard){
-  for (i=0;i<20;i++){ 
-    const bubble = document.createElement('div');
-    bubble.className = 'bubble';
-    posX =650;
-    posY =650;
-    bubble.style.height= Math.random()*100+'px';
-    bubble.style.width = bubble.style.height;
-    bubble.style.left = Math.random()*1000+'px';
-    bubble.setAttribute('id',i);
-    bubble.addEventListener('mouseover',handlePop);
-    gameBoard.append(bubble);
+  for (i=0;i<10;i++){ 
+    const newBubble = initBubble();
+    gameBoard.append(newBubble);
   }
 }
 main = function(){
   const gameBoard = document.getElementsByClassName('bubbleBox')[0];
-  console.log(gameBoard);
-  setInterval(addBubbles, 5*1000,gameBoard)
-  
+  addBubbles(gameBoard);
+  setInterval(addBubbles,3*1000,gameBoard);
 }
